@@ -1,0 +1,14 @@
+{
+  "name": "cypress-techlead",
+  "version": "1.0.0",
+  "description": "Curso de Cypress TechLead",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "curso",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  }
+}
