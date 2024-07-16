@@ -19,9 +19,9 @@ jobs:
           env: EMAIL=${{ secrets.EMAIL }},PASSWORD=${{ secrets.PASSWORD }},EMAILFAKE=teste@bol.com.br
           spec: cypress/e2e/Login.cy.js
 
-      - uses: cypress-io/github-action@v6
+      - name: Upload dos arquivos
         # after the test run completes store videos and any screenshots
-      - uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         # add the line below to store screenshots only on failures
         if: failure()
         with:
