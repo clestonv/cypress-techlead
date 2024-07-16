@@ -28,6 +28,6 @@ describe('Tela Login', () => {
     cy.loginSuccess(email, password);
   });
   it('CT006 - Validar Login com Falha', () => {
-    cy.loginFail(Cypress.env('EMAILFAKE'),'1234@T');
+    cy.loginFail('teste@bol.com.br','1234@T');
   });
 })
