@@ -4,8 +4,8 @@
   "description": "Curso de Cypress TechLead",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open",
-    "run:test": "npx cypress run --spec 'cypress/e2e/Login.cy.js'"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --spec 'cypress/e2e/Login.cy.js'"
   },
   "author": "curso",
   "license": "ISC",

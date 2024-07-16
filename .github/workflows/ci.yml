@@ -8,8 +8,13 @@ jobs:
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
+      - name: Verificação versão do Node e Arquivos Copiados
+        run: |
+          node --version && ls
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
+
       - uses: cypress-io/github-action@v6
         # after the test run completes store videos and any screenshots
       - uses: actions/upload-artifact@v4
