@@ -22,7 +22,9 @@ describe('Tela Login', () => {
   })
 
   it('CT005 - Validar Login com Sucesso', () => {
-    cy.loginSuccess(Cypress.env('email'),Cypress.env('password'));
+    const email = Cypress.env('email')
+    const password = Cypress.env('password')
+    cy.loginSuccess(email, password);
   });
   it('CT006 - Validar Login com Falha', () => {
     cy.loginFail(Cypress.env('emailFake'),'1234@T');
