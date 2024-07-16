@@ -1,25 +1,22 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// definições de tipos para o objeto "cy" do Cypress
+/// <reference types="cypress" />
+
+const home = require('../fixtures/home.json');
+
+Cypress.Commands.add('login', (email, login) => { 
+    cy.fixture('login').then((selector) =>{
+        cy.get(selector.emailInput).should('be.visible').type(email);
+        cy.get(selector.passwordInput).should('be.visible').type(login);
+        cy.get(selector.btnLogin).should('have.text', 'Entrar').click();
+        cy.get(home.btnLogout).should('contain','Logout')
+    })
+})
+
+Cypress.Commands.add('loginFail', (email, login) => { 
+    cy.fixture('login').then((selector) =>{
+        cy.get(selector.emailInput).should('be.visible').type(email);
+        cy.get(selector.passwordInput).should('be.visible').type(login);
+        cy.get(selector.btnLogin).should('have.text', 'Entrar').click();
+        cy.get(selector.Alert).should('be.visible')
+    })
+})
