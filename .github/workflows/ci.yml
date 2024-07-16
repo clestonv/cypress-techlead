@@ -5,21 +5,18 @@ jobs:
     runs-on: ubuntu-22.04
     environment: qa
     steps:
-      - name: Checkout 
+      - name: 📁 Copiando o Projeto 📂 
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Verificação versão do Node e Arquivos Copiados
-        run: |
-          node --version && ls
 
-      - name: Cypress run
+      - name: 🧪 Rodando os Testes do Cypress 🧪
         uses: cypress-io/github-action@v6
         with:
           env: EMAIL=${{ secrets.EMAIL }},PASSWORD=${{ secrets.PASSWORD }},EMAILFAKE=teste@bol.com.br
           spec: cypress/e2e/Login.cy.js
 
-      - name: Upload dos arquivos
+      - name: ⛔ Upload dos arquivos em caso de falha 🎬
         # after the test run completes store videos and any screenshots
         uses: actions/upload-artifact@v4
         # add the line below to store screenshots only on failures
@@ -27,8 +24,10 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
-      - uses: actions/upload-artifact@v4
+          if-no-files-found: ignore 
+        # 'warn' or 'error' are also available, defaults to `warn`
+      - name: ✅ Upload dos arquivos em caso de sucesso 📹
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
           path: cypress/videos
