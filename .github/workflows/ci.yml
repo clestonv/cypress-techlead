@@ -14,6 +14,9 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        with:
+          env: EMAIL=sysadmin@qacoders.com,PASSWORD=1234@Test,EMAILFAKE=teste@bol.com.br
+          spec: cypress/e2e/Login.cy.js
 
       - uses: cypress-io/github-action@v6
         # after the test run completes store videos and any screenshots
