@@ -1,8 +1,8 @@
 <h1 align="center">
-    <img src="cypress/img/duckgo.png">
+    <img src="cypress/img/cypress.svg">
 </h1>
 <h1 align="center">
-    <img src="cypress/img/Busca.feature.gif">
+    <img src="cypress/img/Login.gif">
 </h1>
 
 ## 📋 Sobre
