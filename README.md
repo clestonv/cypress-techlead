@@ -38,7 +38,7 @@ $ cd cypress-techlead
 $ npm -i --force
 
 4. Executando Modo Headless
-$ npx cypress run
+$ npm run run:test
 
 
 Feito por Cleberson Osorio 🌊
