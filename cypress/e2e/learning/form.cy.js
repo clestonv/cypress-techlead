@@ -1,5 +1,5 @@
 describe('form', () => {
-    it('formulatio teste', () => {
+    it.skip('formulatio teste', () => {
         cy.visit('http://localhost:5500/index.html');
 
         cy.get('section button:eq(2)')

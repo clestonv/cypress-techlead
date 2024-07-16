@@ -3,19 +3,19 @@
 
 const home = require('../fixtures/home.json');
 
-Cypress.Commands.add('login', (email, login) => { 
+Cypress.Commands.add('loginSuccess', (email, password) => { 
     cy.fixture('login').then((selector) =>{
         cy.get(selector.emailInput).should('be.visible').type(email);
-        cy.get(selector.passwordInput).should('be.visible').type(login);
+        cy.get(selector.passwordInput).should('be.visible').type(password);
         cy.get(selector.btnLogin).should('have.text', 'Entrar').click();
         cy.get(home.btnLogout).should('contain','Logout')
     })
 })
 
-Cypress.Commands.add('loginFail', (email, login) => { 
-    cy.fixture('login').then((selector) =>{
+Cypress.Commands.add('loginFail', (email, password) => { 
+    cy.fixture('login').then((selector) => {        
         cy.get(selector.emailInput).should('be.visible').type(email);
-        cy.get(selector.passwordInput).should('be.visible').type(login);
+        cy.get(selector.passwordInput).should('be.visible').type(password);
         cy.get(selector.btnLogin).should('have.text', 'Entrar').click();
         cy.get(selector.Alert).should('be.visible')
     })

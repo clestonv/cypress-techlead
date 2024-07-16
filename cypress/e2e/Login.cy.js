@@ -16,13 +16,13 @@ describe('Tela Login', () => {
     cy.get(login.btnLogin).should('have.text', 'Entrar')
   })
   // TODO CT004 - Ajustar validação deste teste
-  it.skip('CT004 - Validar Link Primeiro Acesso', () => {
+  it('CT004 - Validar Link Primeiro Acesso', () => {
     cy.get(login.labelCad).should('be.visible')
     cy.get(login.labelCad).should('have.text', 'Primeiro Acesso?Acesse aqui')    
   })
 
   it('CT005 - Validar Login com Sucesso', () => {
-    cy.login(Cypress.env('email'),Cypress.env('s'));
+    cy.loginSuccess(Cypress.env('email'),Cypress.env('password'));
   });
   it('CT006 - Validar Login com Falha', () => {
     cy.loginFail(Cypress.env('emailFake'),'1234@T');

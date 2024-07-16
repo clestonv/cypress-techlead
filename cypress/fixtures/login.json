@@ -3,5 +3,5 @@
     "passwordInput": "#password",
     "btnLogin": "#login",
     "Alert": "div.MuiAlert-standardError",
-    "labelCad": "css-1d4tukr"
+    "labelCad": "div.css-1d4tukr"
 }

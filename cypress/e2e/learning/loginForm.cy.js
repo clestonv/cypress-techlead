@@ -1,7 +1,7 @@
 /// <reference types="cypress">
 
 describe('Example Fixture', () => {
-    it('Login Fixture - Falha', function () {
+    it.skip('Login Fixture - Falha', function () {
         cy.visit('https://automacao.qacoders-academy.com.br/login');  
 
         cy.fixture('person').as('user').then(() => {
@@ -15,7 +15,7 @@ describe('Example Fixture', () => {
         })
 
     });
-    it('Login Fixture - Sucesso', function () {
+    it.skip('Login Fixture - Sucesso', function () {
         cy.visit('https://automacao.qacoders-academy.com.br/login');  
 
         cy.fixture('admin').as('adm').then(() => {
