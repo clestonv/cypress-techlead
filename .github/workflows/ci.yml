@@ -3,6 +3,7 @@ on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+    environment: qa
     steps:
       - name: Checkout 
         uses: actions/checkout@v4
@@ -15,7 +16,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          env: EMAIL=sysadmin@qacoders.com,PASSWORD=1234@Test,EMAILFAKE=teste@bol.com.br
+          env: EMAIL=${{ secrets.EMAIL }},PASSWORD=${{ secrets.PASSWORD }},EMAILFAKE=teste@bol.com.br
           spec: cypress/e2e/Login.cy.js
 
       - uses: cypress-io/github-action@v6
